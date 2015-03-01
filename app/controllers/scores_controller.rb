@@ -8,7 +8,7 @@ class ScoresController < ApplicationController
   def create
     @score = Score.new(score_params)
     @score.save()
-    rander json: @score
+    render json: @score
   end
 
   private
