@@ -2,6 +2,8 @@ class ScoresController < ApplicationController
 
   def index
     @scores = Score.all
+    @scores = @scores.sort_by { |score| score.score}
+    @scores = @scores[0..9]
     render json: @scores
   end
 
